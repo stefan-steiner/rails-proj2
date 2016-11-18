@@ -7,7 +7,7 @@
       <li><a href="#latenight_landing">Late Night</a></li>
       <li><a href="#GBC_landing">GBC</a></li>
       <li><a href="#bearmarket_landing">Bear Market</a></li>
-      <li><a href="#cart_landing">Cart</a><li>  
+      <li><%= link_to 'Cart', cart_path(current_user.cart.id) %></li>
     </ul>
   </div>
 
@@ -21,7 +21,7 @@
 
 <section class="module content">
   <div class="container">
-  
+
 
     <p> What is UBEAR EATS?
     </p>
@@ -38,10 +38,12 @@
 <section class="module content">
   <div class="container">
     <h2> Menu </h2>
-    <p> Late Night Menu.. 
+    <p> Late Night Menu..
     <br>
     </p>
-    <%= link_to "DANK ASS CHICKEN TENDERS", cart_path(0), class: "menu-button" %>
+    <% Item.all.each do |item| %>
+      <%= item.item %><%= button_to "Add to Cart", cart_add_path(id: item.id), class: "add" %>
+    <% end %>
   </div>
 </section>
 
@@ -68,7 +70,7 @@
 <section class="module content">
   <div class="container">
   <h1> Bear Market catalog...</h1>
-    
+
   </div>
 </section>
 

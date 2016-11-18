@@ -1,0 +1,25 @@
+<%= form_for @user, url: new_user_path do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <H1> First Name </H1>
+    <%= f.text_field :first_name, :placeholder => "First Name" %>
+    <H1> Last Name </H1>
+    <%= f.text_field :last_name, :placeholder => "Last Name" %>
+    <H1>Email </H1>
+    <%= f.text_field :email, :placeholder => "Email Address" %>
+    <H1>Address</H1>
+    <%= f.text_field :address, :placeholder => "Address" %>
+    <p></p>
+    <%= f.submit "Submit"%>
+<% end %>

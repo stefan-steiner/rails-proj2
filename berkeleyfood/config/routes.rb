@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'welcome/index'
   root 'welcome#index'
   resources :cart
   resources :items
-  patch 'delete', to: 'items#delete'
+  post '/cart/add', to: 'cart#add'
+  delete '/cart/delete/:id', to: 'cart#destroy', as: "cart_delete"
 end

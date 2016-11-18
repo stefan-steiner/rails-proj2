@@ -1,8 +1,8 @@
 <h1>Cart</h1>
 <h1>Items:</h1>
 <% @cart.items.each do |item| %>
-	<h3><%= item.name %></h3>
+	<h3><%= item.item %></h3>
 	<p>Price: <%= item.price %></p>
 	<p>Quantity: <%= item.quantity %></p>
-	<%= button_to "Remove", delete_path(id: item), :class => "button", :method => :patch %>
+	<%= button_to "Remove", cart_delete_path(id: item.id), :class => "button", :method => :delete %>
 <% end %>
