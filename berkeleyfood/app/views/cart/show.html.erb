@@ -1,8 +1,20 @@
-<h1>Cart</h1>
-<h1>Items:</h1>
-<% @cart.items.each do |item| %>
-	<h3><%= item.item %></h3>
-	<p>Price: <%= item.price %></p>
-	<p>Quantity: <%= item.quantity %></p>
-	<%= button_to "Remove", cart_delete_path(id: item.id), :class => "button", :method => :delete %>
-<% end %>
+<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/custom.js"></script>
+<title> Welcome! </title>
+<h1 class="title">Cart</h1>
+<h1 class="title">Items:</h1>
+<section class="cart-list">
+  <div class="cart-heading">
+      <% @cart.items.each do |item| %>
+      	<h3><%= item.item %></h3>
+      	<p>Price: <%= item.price %></p>
+      	<p>Quantity: <%= item.quantity %></p>
+      	<%= button_to "Remove", cart_delete_path(id: item.id), :class => "button", :method => :delete %>
+      <% end %>
+  </div>
+</section>
+
+<%= link_to "Back", root_path %>

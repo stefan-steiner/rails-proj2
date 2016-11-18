@@ -1,21 +1,6 @@
 <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <title> Welcome! </title>
-<div class="menu-bar">
-    <ul>
-      <li><a href="#about_landing">About</a></li>
-      <li><a href="#latenight_landing">Late Night</a></li>
-      <li><a href="#GBC_landing">GBC</a></li>
-      <li><a href="#bearmarket_landing">Bear Market</a></li>
-      <% if user_signed_in? %>
-        <li><%= link_to 'Cart', cart_path(current_user.cart.id) %></li>
-        <li><%= link_to 'Log Out', destroy_user_session_path, :method => :delete %></li>
-      <% else %>
-        <li><%= link_to 'Sign Up', new_user_session_path %></li>
-      <% end %>
-    </ul>
-  </div>
-
 <section class="module parallax parallax-1">
   <div class="container">
   <div id="about_landing"></div>
@@ -26,8 +11,6 @@
 
 <section class="module content">
   <div class="container">
-
-
     <p> What is UBEAR EATS?
     </p>
   </div>
