@@ -1,10 +1,25 @@
+<link rel="stylesheet" type="text/css" href="../../assets/stylesheets/cart.css">
 <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/custom.js"></script>
 <title> Welcome! </title>
-<h1 class="title">Cart</h1>
+<div class="menu-bar-cart">
+    <ul>
+      <li><a href="#about_landing">About</a></li>
+      <li><a href="#latenight_landing">Late Night</a></li>
+      <li><a href="#GBC_landing">GBC</a></li>
+      <li><a href="#bearmarket_landing">Bear Market</a></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'Cart', cart_path(current_user.cart.id) %></li>
+        <li><%= link_to 'Log Out', destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+        <li><%= link_to 'Sign Up', new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+<h1 class="title" id="cart">Cart</h1>
 <h1 class="title">Items:</h1>
 <section class="cart-list">
   <div class="cart-heading">
