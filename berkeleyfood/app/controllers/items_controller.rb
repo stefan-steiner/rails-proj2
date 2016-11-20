@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
 		@item.cart_id = current_user.cart.id
 		@item.save
 		redirect_to cart_path(current_cart.id)
-
 	end
 
 	def delete
@@ -13,8 +12,20 @@ class ItemsController < ApplicationController
 		redirect_to cart_path(current_cart.id)
 	end
 
-	def new 
+	def new
 		@item = Item.new
+	end
+
+	def increase
+		@item = Item.find(params[:id])
+		@item.quantity += 1
+	end
+
+	def decrease
+		@item = Item.find(params[:id])
+		if @item.quantity >= 1
+			@item.quantity -= 1
+		end
 	end
 
 	def create

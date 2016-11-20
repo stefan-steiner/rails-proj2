@@ -1,4 +1,6 @@
 <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/navbar.css">
+<link rel="stylesheet" type="text/css" href="../../assets/stylesheets/welcome.css">
+
 <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <title> Welcome! </title>
@@ -47,8 +49,12 @@
     <% count = 0 %>
     <% Item.all.each do |item| %>
       <% if count < 9 %>
-        <%= item.item %><%= button_to "Add to Cart", cart_add_path(id: item.id), class: "add" %>
+      <div class="item-container">
+        <div class="item"><%= item.item %></div>
+        <div class="quantity"><%= "Quantity: " + item.quantity.to_s %></div>
+        <div class="item-button"><%= button_to "+", cart_add_path(id: item.id), class: "add-button" %></div>
         <% count += 1 %>
+      </div>
       <% end %>
     <% end %>
   </div>

@@ -1,0 +1,34 @@
+.add-button:hover {
+  cursor: pointer;
+  background-color: red !important;
+}
+
+.item-container {
+  width: 500px;
+  overflow: hidden;
+}
+
+.item {
+  float: left;
+  width: 35%;
+}
+
+.item-button {
+}
+
+.quantity {
+  padding-bottom: 10px;
+  padding-right: 3%;
+  float:left;
+}
+
+.add-button {
+  float: left;
+  text-decoration: none;
+  color: white;
+  background-color: blue;
+  padding-left: 1%;
+  padding-right: 1%;
+  border: none;
+  border-radius: 50%;
+}
