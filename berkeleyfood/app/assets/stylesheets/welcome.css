@@ -22,6 +22,10 @@
   float:left;
 }
 
+.quantity-buttons {
+  float: left;
+}
+
 .add-button {
   float: left;
   text-decoration: none;

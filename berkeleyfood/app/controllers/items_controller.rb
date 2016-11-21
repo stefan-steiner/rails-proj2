@@ -16,18 +16,6 @@ class ItemsController < ApplicationController
 		@item = Item.new
 	end
 
-	def increase
-		@item = Item.find(params[:id])
-		@item.quantity += 1
-	end
-
-	def decrease
-		@item = Item.find(params[:id])
-		if @item.quantity >= 1
-			@item.quantity -= 1
-		end
-	end
-
 	def create
 		@item = Item.new(item_params)
 		@item.cart_id = current_cart.id

@@ -16,15 +16,25 @@ class CartController < ApplicationController
 		end
 	end
 
+	def increase
+		@item = Item.find(params[:id])
+		@item.quantity += 1
+		@item.save
+		redirect_to '/'
+	end
+
+	def decrease
+		@item = Item.find(params[:id])
+		if @item.quantity > 1
+			@item.quantity -= 1
+			@item.save
+		end
+		redirect_to '/'
+	end
+
 	def destroy
 		@cart = current_user.cart;
 		@cart.items.delete(Item.find(params[:id]))
 		redirect_to '/cart/' + current_user.id.to_s
 	end
 end
-
-Item.create(:item => "Wings", :quantity => 1, :price => 7, :restaurat => "Crossroads")
-Item.create(:item => "Orange Chicken Plate", :quantity => 1, :price => 7, :restaurat => "Crossroads")
-Item.create(:item => "Steak Plate", :quantity => 1, :price => 7, :restaurat => "Crossroads")
-Item.create(:item => "Hamburger", :quantity => 1, :price => 5, :restaurat => "Crossroads")
-Item.create(:item => "Chocolate Pancakes", :quantity => 1, :price => 3, :restaurat => "Crossroads")

@@ -51,7 +51,9 @@
       <% if count < 9 %>
       <div class="item-container">
         <div class="item"><%= item.item %></div>
+        <div class="quantity-buttons"><%= button_to "<", cart_decrease_path(id: item.id), class: "", :method => :patch %></div>
         <div class="quantity"><%= "Quantity: " + item.quantity.to_s %></div>
+        <div class="quantity-buttons"><%= button_to ">", cart_increase_path(id: item.id), class: "quantity-increase", :method => :patch %></div>
         <div class="item-button"><%= button_to "+", cart_add_path(id: item.id), class: "add-button" %></div>
         <% count += 1 %>
       </div>
