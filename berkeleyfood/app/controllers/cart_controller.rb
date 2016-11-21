@@ -32,6 +32,15 @@ class CartController < ApplicationController
 		redirect_to '/'
 	end
 
+	def checkout
+		@cart = Cart.find(params[:id])
+		@items = @cart.items
+		@items.each do |item|
+			item.quantity = 1
+			item.save
+		end
+	end
+
 	def destroy
 		@cart = current_user.cart;
 		@cart.items.delete(Item.find(params[:id]))
