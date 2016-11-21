@@ -1,10 +1,10 @@
 .add-button:hover {
   cursor: pointer;
-  background-color: red !important;
+  background-color: rgb(69, 180, 251) !important;
 }
 
 .item-container {
-  width: 500px;
+  width: 600px;
   overflow: hidden;
 }
 
@@ -24,15 +24,50 @@
 
 .quantity-buttons {
   float: left;
+  padding-right: 10px;
+}
+
+.quantity-increase {
+  border: none;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  background-color: white;
+}
+
+.quantity-decrease {
+  border: none;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  background-color: white;
+}
+
+.quantity-decrease:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.quantity-increase:hover {
+  color: blue;
+  cursor: pointer;
 }
 
 .add-button {
   float: left;
   text-decoration: none;
   color: white;
-  background-color: blue;
+  background-color: rgb(33, 21, 130);
   padding-left: 1%;
+  margin-left: 5%;
   padding-right: 1%;
   border: none;
   border-radius: 50%;
+  margin-top: 3px;
+}
+
+/* map */
+#map {
+  width: 400px;
+  height: 400px;
 }
