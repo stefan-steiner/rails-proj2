@@ -37,6 +37,7 @@ class CartController < ApplicationController
 			item.quantity = 1
 			item.save
 		end
+		@cart.items.delete(Item.all)
 	end
 
 	def destroy
