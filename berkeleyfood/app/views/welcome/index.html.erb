@@ -2,6 +2,8 @@
   <script type="text/javascript" src="../../assets/js/map.js"></script>
   <script src="js/jquery-3.1.1.min.js"></script>
   <script src="../../assets/js/application.js"></script>
+  <script type="text/javascript" src="../../assets/js/index.js"></script>
+
   <script async defer
     src=
     "https://maps.googleapis.com/maps/api/js?key=AIzaSyBmCWMVKVJvNyUrCwP6yIwLApM9qFVpu2c&libraries=places,drawing,geometry&v=3&callback=initMap">
@@ -60,10 +62,10 @@
       <% if count < 13 %>
       <div class="item-container">
         <div class="item"><%= item.item.to_s + ": $" + item.price.to_s %></div>
-        <div class="quantity-buttons"><%= button_to "<", cart_decrease_path(id: item.id), class: "quantity-decrease", :method => :patch %></div>
-        <div class="quantity"><%= "Quantity: " + item.quantity.to_s%></div>
-        <div class="quantity-buttons"><%= button_to ">", cart_increase_path(id: item.id), class: "quantity-increase", :method => :patch %></div>
-        <div class="item-button"><%= button_to "+", cart_add_path(id: item.id), class: "add-button" %></div>
+        <div class="quantity-buttons" id=<%="decrease-button-container#{count}" %>><%= button_to "<", cart_decrease_path(id: item.id), class: "quantity-decrease-button", id: "quantity-decrease#{count}", :method => :patch %></div>
+        <div class="quantity-container"><h4 class="quantity" id=<%="number#{count}" %>>1</h4></div>
+        <div class="quantity-buttons" id=<%="increase-button-container#{count}" %>><%= button_to ">", cart_increase_path(id: item.id), class: "quantity-increase-button", id: "quantity-increase#{count}", :method => :patch %></div>
+        <div class="add-button-container"><%= button_to "+", cart_add_path(id: item.id), class: "add-button" %></div>
         <% count += 1 %>
       </div>
       <% end %>

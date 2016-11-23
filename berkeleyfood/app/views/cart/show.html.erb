@@ -35,6 +35,4 @@
 </section>
 <h1>Total: $<%= total %></h1>
 <%= button_to "Checkout", cart_checkout_path(current_user.cart.id), :class => "button", :method => :patch %>
-
-
-<%= link_to "Back", root_path %>
+<%= link_to "Back", root_path, :method => :get %>

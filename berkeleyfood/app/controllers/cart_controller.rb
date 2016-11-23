@@ -20,7 +20,6 @@ class CartController < ApplicationController
 		@item = Item.find(params[:id])
 		@item.quantity += 1
 		@item.save
-		redirect_to '/'
 	end
 
 	def decrease
@@ -29,11 +28,10 @@ class CartController < ApplicationController
 			@item.quantity -= 1
 			@item.save
 		end
-		redirect_to '/'
 	end
 
 	def checkout
-		@cart = Cart.find(params[:id])
+		@cart = current_user.cart
 		@items = @cart.items
 		@items.each do |item|
 			item.quantity = 1
