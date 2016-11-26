@@ -1,0 +1,18 @@
+<head>
+  <script async defer
+    src=
+    "https://maps.googleapis.com/maps/api/js?key=AIzaSyBmCWMVKVJvNyUrCwP6yIwLApM9qFVpu2c&libraries=places,drawing,geometry&v=3&callback=initMap">
+  </script>
+</head>
+  <div class="tracking-info-container">
+    <h1 class="tracking-title"> Your Order </h1>
+    <div class="bullet-line"></div>
+    <ul class="order-progress-list">
+      <li><h3 class="preparing">Preparing Order</h3></li>
+      <li><h3 class="picking-up">Order is being picked up</h3></li>
+      <li><h3 class="delivery">Order out for delivery </h3></li>
+    </ul>
+    <%= link_to "Home", root_path, :method => :get %>
+  </div>
+  <div id="trackmap">
+  </div>

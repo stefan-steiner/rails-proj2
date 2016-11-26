@@ -93,7 +93,7 @@ section.module.parallax-4 {
   section.module.parallax p {
     font-size: 48px;
   }
-  ul {
+  .navbar {
   padding: 0;
   position: fixed;
   margin-top: 20px;
@@ -108,13 +108,13 @@ section.module.parallax-4 {
   z-index: 5;
   }
 
-li {
+.navbar li {
   display: inline-block;
   padding: 0;
   margin: 0;
 }
 
-li a {
+.navbar li a {
   display: block;
   color: white;
   width: 105px;

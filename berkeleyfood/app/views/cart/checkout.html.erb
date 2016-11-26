@@ -1,3 +1,5 @@
-<link rel="stylesheet" type="text/css" href="../../assets/stylesheets/checkout.css">
 <hi class="thank-you-title">Thank you for your order!</h1>
-<%= link_to "Home", root_path, :method => :get %>
+<ul class="checkout-options-list">
+  <li><p class="checkout-home-button"><%= link_to "Home", root_path, :method => :get %></p></li>
+  <li><p class="checkout-trackorder-button"><%= link_to "Track Order", cart_track_path, :method => :get %></p></li>
+</ul>

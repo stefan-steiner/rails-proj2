@@ -45,4 +45,7 @@ class CartController < ApplicationController
 		@cart.items.delete(Item.find(params[:id]))
 		redirect_to '/cart/' + current_user.id.to_s
 	end
+
+	def track
+	end
 end

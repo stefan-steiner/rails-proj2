@@ -1,0 +1,32 @@
+.tracking-info-container {
+  height: 100vh;
+  width: 23%;
+  border-right: 2px solid rgb(140, 134, 134);
+  border-radius: 3px;
+}
+
+#trackmap {
+  height: 100vh;
+  width: 77%;
+  left: 23%;
+  top: 0;
+  position: absolute;
+}
+
+.bullet-line {
+  width: 5%;
+  height: 11.5vh;
+  top: 13%;
+  left: 1.75%;
+  border-left: solid 2px black;
+  z-index: 5;
+  position: absolute;
+}
+
+.picking-up {
+  color: rgb(211, 211, 214);
+}
+
+.delivery {
+  color: rgb(211, 211, 214);
+}
