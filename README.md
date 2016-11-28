@@ -5,6 +5,7 @@ UBEAR EATS
 #Team Members: 
 Vishnu Kumar, John Ang, Stefan Steiner, Jack Barnett, Jeevan Mokkala
 #Demo link:
+https://www.youtube.com/watch?v=M0B_SIYYzO8&feature=youtu.be
 
 #Idea: 
 Ordering system where students can log in and order menu items from Cal Dining Restaurants
