@@ -86,3 +86,8 @@
   width: 200px;
   height: 200px;
 }
+
+.app-description {
+  position: absolute;
+  right: 15%;
+}
